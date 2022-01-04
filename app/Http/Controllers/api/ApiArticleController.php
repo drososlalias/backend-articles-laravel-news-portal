@@ -12,7 +12,7 @@ class ApiArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::paginate(5);
+        $articles = Article::all();
         return json_encode($articles);
     }
 
