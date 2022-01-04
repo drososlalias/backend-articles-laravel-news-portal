@@ -21,8 +21,12 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:categories'
+        ]);
+
         Category::create([
-            'NAME' => $request->name,
+            'name' => $request->name
         ]);
         return redirect('/categories');
     }
@@ -39,6 +43,11 @@ class CategoryController extends Controller
 
     public function update(Category $category, Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'articles' => 'required'
+        ]);
+
         $category->name = $request->name;
         $category->articles = $request->articles;
         $category->save();
@@ -46,7 +55,7 @@ class CategoryController extends Controller
         return redirect('/categories');
     }
 
-    public function delete(Category $category)
+    public function destroy(Category $category)
     {
         $category->delete();
         return redirect('/categories');

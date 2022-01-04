@@ -10,9 +10,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        // return json_encode($articles);
+        // $articles = Article::paginate(3);
         return view('articles.index', ['articles' => $articles]);
     }
+
+
+
 
     public function create()
     {
@@ -49,7 +52,7 @@ class ArticleController extends Controller
         return redirect('/articles');
     }
 
-    public function delete(Article $article)
+    public function destroy(Article $article)
     {
         $article->delete();
         return redirect('/articles');
