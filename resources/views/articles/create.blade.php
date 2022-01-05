@@ -3,7 +3,7 @@
 @section('title') Create Article @endsection
 
 @section('content')
-<form method="POST" action="/articles">
+<form class="container__form" method="POST" action="/articles">
     @csrf
     <div class="form-group">
       <label for="title">Title</label>
