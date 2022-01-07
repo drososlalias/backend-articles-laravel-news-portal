@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -29,6 +30,11 @@ class ArticleController extends Controller
             'description' => $request->description,
             'category_id' => $request->category_id
         ]);
+
+        $articles = Category::find($request->category_id);
+        $articles->articles += 1;
+        $articles->save();
+
         return redirect('/articles');
     }
 

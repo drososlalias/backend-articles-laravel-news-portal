@@ -13,12 +13,12 @@ class CreateArticles extends Migration
      */
     public function up()
     {
-        
+
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamp('article_date', $precision = 0);
         });
     }
