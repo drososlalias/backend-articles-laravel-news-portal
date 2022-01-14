@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+    background-color: rgb(167, 214, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__form {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 3px solid black;
+    border-radius: 6px;
+    align-self: center;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.form-group > input {
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    border-radius: 4px;
+    height: 20px;
+}
+
+.form-group > label {
+    display: block;
+    text-align: center;
+}
