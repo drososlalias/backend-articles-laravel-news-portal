@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
+
 // TODO: csrf token via postman for update,store and delete opetations
 
 class ApiArticleController extends Controller
@@ -45,5 +46,10 @@ class ApiArticleController extends Controller
     {
         $article->delete();
         return json_encode('Successful Deletion');
+    }
+
+    public function getArticlesPerCategory(Request $request){
+        $articles = Article::all()->where('category_id' , '=' ,$request->category_id);
+        return json_encode($articles);
     }
 }

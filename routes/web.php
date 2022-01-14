@@ -28,8 +28,10 @@ Route::resource("/categories", CategoryController::class);
 Route::resource("/api/articles", ApiArticleController::class);
 Route::resource("/api/categories", ApiCategoryController::class);
 
-//Admin
+// Get articles per category
+Route::get("/api/articles/category/{category_id}", [ApiArticleController::class , "getArticlesPerCategory"]);
 
+//Admin
 Route::get("/admin", function () {
     return view('layouts.admin');
 });
