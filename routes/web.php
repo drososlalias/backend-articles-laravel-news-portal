@@ -4,7 +4,6 @@ use App\Http\Controllers\api\ApiArticleController;
 use App\Http\Controllers\api\ApiCategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
-use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +27,7 @@ Route::resource("/categories", CategoryController::class);
 Route::resource("/api/articles", ApiArticleController::class);
 Route::resource("/api/categories", ApiCategoryController::class);
 
-// Get articles per category
-Route::get("/api/articles/category/{category_id}", [ApiArticleController::class , "getArticlesPerCategory"]);
+Route::get("/api/articles/category/{category_id}", [ApiArticleController::class, "getArticlesPerCategoryId"]);
 
 //Admin
 Route::get("/admin", function () {
