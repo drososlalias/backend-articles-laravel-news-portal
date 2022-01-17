@@ -18,9 +18,6 @@ class CategorySeeder extends Seeder
             'name' => 'ECONOMY'
         ]);
         DB::table('categories')->insert([
-            'name' => 'SPOTLIGHT'
-        ]);
-        DB::table('categories')->insert([
             'name' => 'LIFESTYLE'
         ]);
         DB::table('categories')->insert([
